@@ -24,4 +24,16 @@ class StudentController extends Controller
             return ["result" => "Student Added Failed."];
         }
     }
+
+    public function studentUpdate(Request $request) {
+        $student = Student::find($request->id);
+        $student->name = trim($request->name);
+        $student->email = trim($request->email);
+        $student->phone = trim($request->phone);
+        if ($student->save()) {
+            return ["result" => "Student Updated Successfully."];
+        } else {
+            return ["result" => "Student Updated Failed."];
+        }
+    }
 }
