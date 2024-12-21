@@ -36,4 +36,13 @@ class StudentController extends Controller
             return ["result" => "Student Updated Failed."];
         }
     }
+
+    public function studentDelete($id) {
+        $student = Student::destroy($id);
+        if ($student) {
+            return ["result" => "Student Deleted Successfully."];
+        } else {
+            return ["result" => "Student Deleted Failed."];
+        }
+    }
 }
