@@ -11,4 +11,8 @@ class StudentController extends Controller
         // return "Student List";
         return Student::all();
     }
+
+    public function studentAdd(Request $request) {
+        return $request->input();
+    }
 }
